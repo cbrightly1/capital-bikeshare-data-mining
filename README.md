@@ -1,14 +1,11 @@
 # Capital Bikeshare Data Mining Project
-Data mining process for a group project about the Capital Bikeshare data. Developed in Python using Jupyter Notebook.
-
-# Overview
-The purpose of this project was to process the data to build a model to predict bike availability for any station at any given time. The data was pulled from the Capital Bikeshare data repository.
+The purpose of this project was to process the data to build a model to predict bike availability for any station at any given time. The data was pulled from the Capital Bikeshare data repository. The data cleaning process was performed twice: once for an explortory data analysis and again for the final model. The EDA process contained data for only June 2019 while the data for the final model contained a year's worth of data. The final dataset contains ride information for each station, calendar indicators, and weather data.
 
 # Data
-Ride data from December 2018 to December 2019 with columns contained location, time, and user information.
+Ride data from December 2018 to December 2019 with columns contained location, time, and user information. The capacity data for each station was also brought in to calculate the percent of bike availability for each station. Lastly, daily weather data for the DC area was pulled in as a potential explanatory variable for the model.
 
 # Challenges
-There were many challenges that made this particular data cleaning process very difficult which were:
+There were many challenges that made this particular data cleaning process very difficult:
 1. **Ride Data**: The data was structured so that every row was a particular ride, with information about their starting and ending location. Because the data needed to be organized per station, a lot of manipulation was required to transform the data into this form.
 2. **Van reshuffling**: One of the biggest problems was the van reshuffling. Like any other rideshare comapny, there is a van that goes around to distribute bikes in the appropriate places. However, this information was not present in our data so the reshuffling had to be infered from missing data (aka if the start and end locations for a particular bike did not match).
 3. **What is bike availability?**: Another challenge was defining bike availability since the number of arrivals did not accurately describe the number of bikes at any station. In the end, bike availability was defined as the net difference between arrivals and departures after accounting for the number of bikes in the previous hour.
